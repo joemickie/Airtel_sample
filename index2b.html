@@ -12,18 +12,20 @@
     <meta property="og:description"
         content="Nigeria leading provider of prepaid, postpaid mobile, & 4G services. Recharge your prepaid mobile & pay your postpaid bills online." />
     <meta property="og:image" content="http://www.airtel.in/assets/images/airtel-logo.png" />
-    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style2b.css">
     <title>Airtel: Prepaid | Postpaid | 4G | 5G</title>
 </head>
 
 <body>
-    <main>
-        <div class="content-wrap">
+    <main >
+        <div class="content-wrap container-fluid">
             <!--Header-->
-            <header class="m-menu megaMenus">
-                <nav id="airtelMegaMenu" class="navbar navbar-default dropdown">
+            <header class="m-menu row">
+                <nav id="airtelMegaMenu" class="col-12 col-md-11 col-lg-11 mx-auto">
                     <div class="top-strip">
-                        <div class="container-fluid text-right top-smal-menu">
+                        <div class="container-fluid top-smal-menu justify-content-right">
                             <a target="_self" class="text-uppercase"></a>
                             <a target="_self" class="text-uppercase ng-isolate-scope" href="dsarf-form">DSARF</a>
                             <a target="_blank" class="text-uppercase ng-isolate-scope"
@@ -111,8 +113,8 @@
                     </div>
                 </nav>
             </header>
-            <section class="banner home-banner overflow-hidden airtelwow animated">
-                <article class="padding-bottom-0">
+            <section class="banner row">
+                <article class="col-12 col-md-11 col-lg-11 mx-auto pb-3 pt-2">
                     <div class="row">
                         <div id="ke-slide" class="carousel slide" data-ride="carousel" data-interval="3000">
 
@@ -193,27 +195,28 @@
                                     <a href="eSIM" target="_self"><img src="assets/images/ng/esim2.jpg"
                                             style="width: 100% !important; vertical-align: middle; cursor: pointer;"></a>
                                 </div>
-                            </div>
-
-                        </div> -->
-
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li>&#186;</li>
-                                    <li>&#186;</li>
-                                    <li>&#186;</li>
-                                    <li>&#186;</li>
-                                    <li>&#186;</li>
-                                    <li>&#186;</li>
-                                    <li>&#186;</li>
-                                </ol>
+                            </div> -->
 
                             </div>
+
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li>&#186;</li>
+                                <li>&#186;</li>
+                                <li>&#186;</li>
+                                <li>&#186;</li>
+                                <li>&#186;</li>
+                                <li>&#186;</li>
+                                <li>&#186;</li>
+                            </ol>
+
                         </div>
+                    </div>
                 </article>
             </section>
             <!-- for recharge widget -->
-            <section class="recharge-main">
+            <!-- for Big screen -->
+            <section class="recharge-main d-none d-md-block">
                 <article>
                     <div class="recharge-left">
                         <h4>Recharge &amp; Pay bills</h4>
@@ -257,43 +260,99 @@
                     </div>
                 </article>
             </section>
+             <!-- for small screen -->
+             <section class="recharge-main-small d-block d-md-none">
+                <article>
+                    <div class="recharge-left">
+                        <h4>Recharge &amp; Pay bills small screen</h4>
+
+                    </div>
+                    <div class="recharge-right">
+                        <div class="recharge-tab">
+                            <ul>
+                                <li class="recharge-type recharge-prepaid-type active"
+                                    onclick="rechargeTypeSelection('prepaid')"><img
+                                        src="assets/images/homepage-widget/prepaid.svg?v=1613632483347" alt="Prepaid" />
+                                    Prepaid</li>
+                                <li class="recharge-type recharge-postpaid-type"
+                                    onclick="rechargeTypeSelection('postpaid')"><img
+                                        src="assets/images/homepage-widget/postpaid.svg?v=1613632483347"
+                                        alt="Postpaid" />
+                                    Postpaid</li>
+                                <li class="recharge-type recharge-braodband-type"
+                                    onclick="rechargeTypeSelection('broadband')"><img
+                                        src="assets/images/homepage-widget/broadband.svg?v=1613632483347"
+                                        alt="Broadband" />
+                                    HBB</li>
+                                <li class="recharge-type recharge-fixed-internet"
+                                    onclick="rechargeTypeSelection('fixedInternet')"><img
+                                        src="assets/images/homepage-widget/ic_fixedinternet_small.svg?v=1613632483347"
+                                        alt="Fixed Internet" width="20" /> Fixed Internet</li>
+                            </ul>
+                        </div>
+                        <div class="recharge-form">
+                            <label class="form-group">
+                                <div id="prefix-label">+234</div>
+                                <input id="quickRechargeInput" onkeyup="validateMsisdn()" type="tel" autocomplete="off"
+                                    placeholder="Enter mobile number" name="recharge" maxlength="10" />
+                            </label>
+                            <button id="quickRechargeBtn" type="button" class="submit-button disable" name="recharge"
+                                onclick="onRechargeSubmit()">
+                                <div id="loading-button"><span><span></span></span></div><span id="btn-text">BUY
+                                    AIRTIME/DATA</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </section>
             <!-- end for recharge widget -->
             <div class="airtelwow animated">
-                <section class="bg-gray-light home-thumb-link-section1 animate-first"
+                <section class="bg-gray-light"
                     style="padding-top: 10px; padding-bottom: 6px">
                     <article class="text-center">
-                        <div class="visible-xs">
-                            <a target="_self" href="/data/data_offers/data_plans">
-                                <img src="assets/images/homepage-widget/Screenshot internet.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">DATA BUNDLES</p>
-                            </a>
-                            <a target="_self" href="voice/bundles/voice_bundles">
-                                <img src="assets/images/homepage-widget/Screenshot voice bundles.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">VOICE BUNDLES</p>
-                            </a>
-                            <a target="_self" href="voice/post_paid/smartpremier" style="line-height: 1;">
-                                <img src="assets/images/homepage-widget/Screenshot postpaid.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">POSTPAID
-                                </p>
-                            </a>
-                            <a target="_self" href="devices/pocket-wifi">
-                                <img src="assets/images/homepage-widget/Screenshot device.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">DEVICES</p>
-                            </a>
-                            <a target="_self" href="nin">
-                                <img src="assets/images/homepage-widget/submit-NIN.svg"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">SUBMIT NIN</p>
-                            </a>
-                            <a target="_self" href="orp/fixed-internet">
-                                <img src="assets/images/homepage-widget/ic_fixedinternet_big.svg"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">FIXED INTERNET</p>
-                            </a>
+                        <div class="visible-xs row pt-3 mx-auto justify-content-center">
+                            <div class="col-6 col-md-4 col-lg-2 ">
+                                <a target="_self" href="/data/data_offers/data_plans">
+                                    <img src="assets/images/homepage-widget/Screenshot internet.png"
+                                        style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                                    <p style="color: #e40000;">DATA BUNDLES</p>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 ">
+                                <a target="_self" href="voice/bundles/voice_bundles">
+                                    <img src="assets/images/homepage-widget/Screenshot voice bundles.png"
+                                        style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                                    <p style="color: #e40000;">VOICE BUNDLES</p>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 ">
+                                <a target="_self" href="voice/post_paid/smartpremier" style="line-height: 1;">
+                                    <img src="assets/images/homepage-widget/Screenshot postpaid.png"
+                                        style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                                    <p style="color: #e40000;">POSTPAID</p>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 ">
+                                <a target="_self" href="devices/pocket-wifi">
+                                    <img src="assets/images/homepage-widget/Screenshot device.png"
+                                        style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                                    <p style="color: #e40000;">DEVICES</p>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 ">
+                                <a target="_self" href="nin">
+                                    <img src="assets/images/homepage-widget/submit-NIN.svg"
+                                        style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                                    <p style="color: #e40000;">SUBMIT NIN</p>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-2 ">
+                                <a target="_self" href="orp/fixed-internet">
+                                    <img src="assets/images/homepage-widget/ic_fixedinternet_big.svg"
+                                        style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                                    <p style="color: #e40000;">FIXED INTERNET</p>
+                                </a>
+                            </div>
                         </div>
                     </article>
                 </section>
@@ -306,10 +365,10 @@
                             <br />Get <span style="color: #e40000;">Free 4GB Data</span>
 
                         </h4>
-                        <div class="flex-icon color-red text-right clear flex-r-p flex-fixed pull-right padding-top-50"
+                        <div class="flex-icon "
                             style="overflow: hidden !important;padding-top: 92px;">
                             <img src="assets/images/links/Screenshot upgrade 4G.png"
-                                style="width: 90px;height: 90px;margin-bottom: 0px;cursor: pointer;float: right;position: relative; top: -5.2rem;right: 4rem;">
+                                style="width: 90px;height: 90px;margin-bottom: 0px;cursor: pointer;float: right;position: relative; top: -3rem;right: 4rem;">
                         </div>
                         <a href="data/4G-airtel"
                             class="link mt-40 bottom-0 find-view-links-80 font-size-14 find-view-links"
@@ -494,6 +553,8 @@
             </style>
         </div>
     </main>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </body>
 
 </html>

@@ -12,16 +12,19 @@
     <meta property="og:description"
         content="Nigeria leading provider of prepaid, postpaid mobile, & 4G services. Recharge your prepaid mobile & pay your postpaid bills online." />
     <meta property="og:image" content="http://www.airtel.in/assets/images/airtel-logo.png" />
-    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style2b.css">
     <title>Airtel: Prepaid | Postpaid | 4G | 5G</title>
 </head>
 
 <body>
     <main>
-        <div class="content-wrap">
+        <div class="content-wrap ">
             <!--Header-->
-            <header class="m-menu megaMenus">
-                <nav id="airtelMegaMenu" class="navbar navbar-default dropdown">
+            <header class="m-menu">
+                <nav id="airtelMegaMenu" class="navbar navbar-default dropdown  pb">
                     <div class="top-strip">
                         <div class="container-fluid text-right top-smal-menu">
                             <a target="_self" class="text-uppercase"></a>
@@ -111,27 +114,29 @@
                     </div>
                 </nav>
             </header>
-            <section class="banner home-banner overflow-hidden airtelwow animated">
-                <article class="padding-bottom-0">
-                    <div class="row">
-                        <div id="ke-slide" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <section class="row">
+                <div class="col-12 col-md-10 col-lg-10 mx-auto">
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                <div class="item height-banner-i selfcare-i-height active">
+                    <article class="pb-3 pt-5">
+                        <div class="row">
+                            <div id="ke-slide" class="carousel slide" data-ride="carousel" data-interval="3000">
 
-                                    <div
-                                        style="text-align: center; width: 100%; padding-left: 10px;padding-right: 10px;">
-                                        <a href="Get-5G"><img src="assets/images/get-5g-5.jpg"
-                                                style="width: 100% !important; vertical-align: middle; cursor: pointer;">
-                                        </a>
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner position-relative top-8">
+                                    <div class="item height-banner-i selfcare-i-height active banner">
+
+                                        <div
+                                            style="text-align: center; width: 100%; padding-left: 10px;padding-right: 10px;">
+                                            <a href="Get-5G"><img src="assets/images/get-5g-5.jpg"
+                                                    style="width: 100% !important; vertical-align: middle; cursor: pointer;">
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- <div class="item height-banner-i selfcare-i-height">
+                                    <!-- <div class="item height-banner-i selfcare-i-height">
 
                                 <div style="text-align: center; width: 100%; padding-left: 10px;padding-right: 10px;">
-                                    <a href="SmartBox-Outdoor-Unit"><img src="assets/images/smartbox-out1.jpg"
+                                    <a href="SmartBox-Outdoor-Unit"><img src="assets/images/ng/home/smartbox-out1.jpg"
                                             style="width: 100% !important; vertical-align: middle; cursor: pointer;">
                                     </a>
                                 </div>
@@ -193,9 +198,9 @@
                                     <a href="eSIM" target="_self"><img src="assets/images/ng/esim2.jpg"
                                             style="width: 100% !important; vertical-align: middle; cursor: pointer;"></a>
                                 </div>
-                            </div>
+                            </div> -->
 
-                        </div> -->
+                                </div>
 
                                 <!-- Indicators -->
                                 <ol class="carousel-indicators">
@@ -210,10 +215,12 @@
 
                             </div>
                         </div>
-                </article>
+                    </article>
+                </div>
             </section>
             <!-- for recharge widget -->
-            <section class="recharge-main">
+            <!-- FOR BIG SCREEN -->
+            <section class="recharge-main-big d-none d-md-block">
                 <article>
                     <div class="recharge-left">
                         <h4>Recharge &amp; Pay bills</h4>
@@ -237,9 +244,55 @@
                                         alt="Broadband" />
                                     HBB</li>
                                 <li class="recharge-type recharge-fixed-internet"
+                                    onclick="rechargeTypeSelection('fixedInternet')">
+                                    <img src="assets/images/homepage-widget/ic_fixedinternet_small.svg?v=1613632483347"
+                                        alt="Fixed Internet" class="img-fluid" width="100" /> Fixed Internet
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="recharge-form">
+                            <label class="form-group">
+                                <div id="prefix-label">+234</div>
+                                <input id="quickRechargeInput" onkeyup="validateMsisdn()" type="tel" autocomplete="off"
+                                    placeholder="Enter mobile number" name="recharge" maxlength="10" />
+                            </label>
+                            <button id="quickRechargeBtn" type="button" class="submit-button disable" name="recharge"
+                                onclick="onRechargeSubmit()">
+                                <div id="loading-button"><span><span></span></span></div><span id="btn-text">BUY
+                                    AIRTIME/DATA</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- FOR SMALL SCREEN -->
+            <section class="recharge-main-small d-block d-md-none">
+                <article>
+                    <div class="recharge-left">
+                        <h4>Recharge &amp; Pay bills small screen</h4>
+
+                    </div>
+                    <div class="recharge-right">
+                        <div class="recharge-tab">
+                            <ul>
+                                <li class="recharge-type recharge-prepaid-type active"
+                                    onclick="rechargeTypeSelection('prepaid')"><img
+                                        src="assets/images/homepage-widget/prepaid.svg?v=1613632483347" alt="Prepaid" />
+                                    Prepaid</li>
+                                <li class="recharge-type recharge-postpaid-type"
+                                    onclick="rechargeTypeSelection('postpaid')"><img
+                                        src="assets/images/homepage-widget/postpaid.svg?v=1613632483347"
+                                        alt="Postpaid" />
+                                    Postpaid</li>
+                                <li class="recharge-type recharge-braodband-type"
+                                    onclick="rechargeTypeSelection('broadband')"><img
+                                        src="assets/images/homepage-widget/broadband.svg?v=1613632483347"
+                                        alt="Broadband" />
+                                    HBB</li>
+                                <li class="recharge-type recharge-fixed-internet"
                                     onclick="rechargeTypeSelection('fixedInternet')"><img
                                         src="assets/images/homepage-widget/ic_fixedinternet_small.svg?v=1613632483347"
-                                        alt="Fixed Internet" /> Fixed Internet</li>
+                                        alt="Fixed Internet" width="100" /> Fixed Internet</li>
                             </ul>
                         </div>
                         <div class="recharge-form">
@@ -259,46 +312,53 @@
             </section>
             <!-- end for recharge widget -->
             <div class="airtelwow animated">
-                <section class="bg-gray-light home-thumb-link-section1 animate-first"
-                    style="padding-top: 10px; padding-bottom: 6px">
-                    <article class="text-center">
-                        <div class="visible-xs">
-                            <a target="_self" href="/data/data_offers/data_plans">
-                                <img src="assets/images/homepage-widget/Screenshot internet.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">DATA BUNDLES</p>
-                            </a>
-                            <a target="_self" href="voice/bundles/voice_bundles">
-                                <img src="assets/images/homepage-widget/Screenshot voice bundles.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">VOICE BUNDLES</p>
-                            </a>
-                            <a target="_self" href="voice/post_paid/smartpremier" style="line-height: 1;">
-                                <img src="assets/images/homepage-widget/Screenshot postpaid.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">POSTPAID
-                                </p>
-                            </a>
-                            <a target="_self" href="devices/pocket-wifi">
-                                <img src="assets/images/homepage-widget/Screenshot device.png"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">DEVICES</p>
-                            </a>
-                            <a target="_self" href="nin">
-                                <img src="assets/images/homepage-widget/submit-NIN.svg"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">SUBMIT NIN</p>
-                            </a>
-                            <a target="_self" href="orp/fixed-internet">
-                                <img src="assets/images/homepage-widget/ic_fixedinternet_big.svg"
-                                    style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
-                                <p style="color: #e40000;">FIXED INTERNET</p>
-                            </a>
-                        </div>
-                    </article>
+                <section class="row pt-3 mx-auto justify-content-center">
+                    <div class="col-6 col-md-4 col-lg-2 ">
+                        <a target="_self" href="/data/data_offers/data_plans">
+                            <img src="assets/images/homepage-widget/Screenshot internet.png"
+                                style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                            <p style="color: #e40000;">DATA BUNDLES</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 ">
+                        <a target="_self" href="voice/bundles/voice_bundles">
+                            <img src="assets/images/homepage-widget/Screenshot voice bundles.png"
+                                style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                            <p style="color: #e40000;">VOICE BUNDLES</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 ">
+                        <a target="_self" href="voice/post_paid/smartpremier" style="line-height: 1;">
+                            <img src="assets/images/homepage-widget/Screenshot postpaid.png"
+                                style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                            <p style="color: #e40000;">POSTPAID</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 ">
+                        <a target="_self" href="devices/pocket-wifi">
+                            <img src="assets/images/homepage-widget/Screenshot device.png"
+                                style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                            <p style="color: #e40000;">DEVICES</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 ">
+                        <a target="_self" href="nin">
+                            <img src="assets/images/homepage-widget/submit-NIN.svg"
+                                style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                            <p style="color: #e40000;">SUBMIT NIN</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2 ">
+                        <a target="_self" href="orp/fixed-internet">
+                            <img src="assets/images/homepage-widget/ic_fixedinternet_big.svg"
+                                style="width: 90px;height: 80px;margin-bottom: 0px;cursor: pointer;">
+                            <p style="color: #e40000;">FIXED INTERNET</p>
+                        </a>
+                    </div>
                 </section>
+
             </div>
-            <div class="flex-container airtelwow animated">
+            <!-- <div class="flex-container airtelwow animated">
                 <section class="clear flex-height bg-white cursor-default manage-boxes">
                     <div class="container-col-6 pull-right-sm">
                         <h4 class="bonus-benner-content">
@@ -345,8 +405,8 @@
                         </div>
                     </div>
                 </section>
-            </div>
-            <div class="flex-container airtelwow animated bg-white">
+            </div> -->
+            <!-- <div class="flex-container airtelwow animated bg-white">
                 <section
                     class="clear flex-block  cursor-default animate-first bggray_diagonal_color  pb-0 manage-boxes">
                     <div class="container-col-6 pull-right-sm overflow-hdn">
@@ -384,8 +444,8 @@
                         </a>
                     </div>
                 </section>
-            </div>
-            <div class="airtelwow animated">
+            </div> -->
+            <!-- <div class="airtelwow animated">
                 <a id="twitterurl" style="color: #333" href="https://twitter.com/modupedu/status/923452759516569600"
                     target="_blank">
                     <section class="tweeter-section animate-first manage-boxes">
@@ -403,8 +463,8 @@
                         </article>
                     </section>
                 </a>
-            </div>
-            <div class="flex-container airtelwow animated bg-white">
+            </div> -->
+            <!-- <div class="flex-container airtelwow animated bg-white">
 
                 <section class="clear flex-height  cursor-default animate-first pb-0 manage-boxes">
                     <div class="container-col-6 pull-right-sm overflow-hdn">
@@ -443,8 +503,8 @@
                         </a>
                     </div>
                 </section>
-            </div>
-            <div class="flex-container airtelwow animated bg-white">
+            </div> -->
+            <!-- <div class="flex-container airtelwow animated bg-white">
                 <section
                     class="clear flex-block animate-first cursor-default bggray_diagonal_color overflow-hdn manage-boxes">
                     <div class="container-col-6 pull-right-sm">
@@ -480,13 +540,13 @@
                         </a>
                     </div>
                 </section>
-            </div>
+            </div> -->
 
-            <div>
+            <!-- <div>
                 <a href="Get-5G"><img src="assets/images/ng/airtel5g-ban-2.jpg"
                         style="width: 100% !important; vertical-align: middle; cursor: pointer;">
                 </a>
-            </div>
+            </div> -->
             <style>
                 #business-menu {
                     display: none;
@@ -494,6 +554,9 @@
             </style>
         </div>
     </main>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </body>
 
 </html>

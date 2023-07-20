@@ -20,15 +20,14 @@ main {
     position: fixed;
     background-color: white;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
 }
 
 .top-smal-menu {
     display: flex;
     justify-content: flex-end;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    margin-right: 3.5%;
+    font-size: 0.6rem;
+    margin-right: 3%;
     margin-top: 1rem;
 }
 
@@ -40,14 +39,15 @@ main {
 .main-menu {
     display: flex;
     justify-content: center;
-    margin-right: 1rem;
-    margin-top: 2rem;
+    align-items: center;
+    margin-right: -3rem;
+    margin-top: 1.2rem;
 }
 
 .main-nav {
     display: flex;
     list-style: none;
-    margin-right: 5rem;
+    margin-left: -4rem;
 }
 
 .mega-menu-link {
@@ -56,25 +56,27 @@ main {
 
 .navbar-nav {
     text-decoration: none;
-    margin-right: .8rem;
+    margin-right: 1rem;
+    font-size: 0.9rem;
 }
 
+.navbar-header {
+    margin-left: -14rem;
+}
 .navbar-brand {
     width: 60%;
     height: 70%;
 }
-
-.navbar-header {
-    margin-right: -4.5rem;
-    margin-top: -0.3rem;
-}
+nav select {
+    /* display: none; */
+    text-align: center;
+  }
 
 /* Banner section */
 .banner {
-    width: 87%;
-    padding-top: 8rem;
+    padding-top: 7rem;
     margin: 0 auto;
-    margin-bottom: -1.5rem;
+    margin-bottom: 0rem;
 }
 
 .carousel-indicators {
@@ -88,8 +90,7 @@ main {
     color: #e40000;
     list-style: none;
     font-size: 2rem;
-    position: relative;
-    bottom: 1.2rem;
+    margin-bottom: -2.3rem;
 }
 
 /* Recharge section */
@@ -274,17 +275,12 @@ main {
 
 .visible-xs {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #030303;
-    text-align: center;
     margin-top: 0.2rem;
 }
 
 .visible-xs a {
     text-decoration: none;
-    margin: 0 2.3rem;
+
 }
 
 .visible-xs img:hover {
@@ -329,7 +325,7 @@ main {
 
 .link {
     position: relative;
-    top: -6.5rem;
+    top: -4.5rem;
     text-decoration: none;
     color: #e40000;
 }
@@ -342,7 +338,7 @@ main {
 }
 
 .pull-left-sm .pull-right-l {
-    margin-top: -3.5rem;
+    margin-top: -1rem;
     width: 4rem;
     height: 7rem;
 }
@@ -350,8 +346,7 @@ main {
 .pull-left-sm .pull-right-r {
     width: 20%;
     height: 38%;
-    margin-top: -3.2rem;
-    margin-bottom: 2rem;
+    margin-top: -0.7rem;
 }
 
 #twitterurl {
