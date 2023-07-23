@@ -27,7 +27,7 @@ main {
     display: flex;
     justify-content: flex-end;
     font-size: 0.6rem;
-    margin-right: 3%;
+    margin-left: 5rem;
     margin-top: 1rem;
 }
 
@@ -63,14 +63,16 @@ main {
 .navbar-header {
     margin-left: -14rem;
 }
+
 .navbar-brand {
     width: 60%;
     height: 70%;
 }
+
 nav select {
     /* display: none; */
     text-align: center;
-  }
+}
 
 /* Banner section */
 .banner {
